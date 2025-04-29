@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project1/data/notifiers.dart';
 import 'package:project1/views/pages/home_page.dart';
 import 'package:project1/views/pages/profile_page.dart';
+import 'package:project1/views/pages/settings_page.dart';
 
 import 'widgets/navbar_widget.dart';
 
@@ -13,16 +14,27 @@ class WidgetTree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Project 1'),
+      appBar: AppBar(
+        title: Text('Project 1'),
         actions: [
-          IconButton(onPressed: () {
-            isDarkModeNotifier.value = !isDarkModeNotifier.value;
-          }, icon: Icon(isDarkModeNotifier.value ? Icons.dark_mode : Icons.light_mode)),          
+          
+          IconButton(
+            onPressed: () {
+              // Add your action here
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SettingPage(),
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
+          ),
         ],
       ),
       body: ValueListenableBuilder(
         valueListenable: selectedPageNotifier,
-        builder:  (context, selecedPage, child) {
+        builder: (context, selecedPage, child) {
           return pages.elementAt(selecedPage);
         },
       ),
