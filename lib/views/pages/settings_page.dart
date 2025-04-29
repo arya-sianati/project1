@@ -14,19 +14,12 @@ class _SettingPageState extends State<SettingPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
-        // actions: [
-        //   ValueListenableBuilder(
-        //     valueListenable: isDarkModeNotifier,
-        //     builder: (context, isDarkMode, child) {
-        //       return IconButton(
-        //         onPressed: () {
-        //           isDarkModeNotifier.value = !isDarkModeNotifier.value;
-        //         },
-        //         icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
-        //       );
-        //     },
-        //   ),
-        // ],
+        leading: BackButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Padding(
