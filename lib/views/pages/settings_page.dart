@@ -19,7 +19,6 @@ class _SettingPageState extends State<SettingPage> {
             Navigator.pop(context);
           },
         ),
-        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Padding(

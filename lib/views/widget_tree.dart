@@ -31,6 +31,7 @@ class WidgetTree extends StatelessWidget {
             icon: Icon(Icons.settings),
           ),
         ],
+        automaticallyImplyLeading: false,
       ),
       body: ValueListenableBuilder(
         valueListenable: selectedPageNotifier,
